@@ -1,0 +1,33 @@
+# Профили сборки arduino-cli: фиксируют версии ядра и библиотек, поэтому
+# прошивка собирается одинаково на любой машине. Недостающие зависимости
+# arduino-cli ставит сам при первой сборке профиля.
+#
+#   arduino-cli compile --profile nano
+#   arduino-cli upload  --profile nano -p <порт>
+#
+# Для дешёвых клонов Nano со старым загрузчиком используйте профиль
+# nano_old_bootloader.
+
+profiles:
+  nano:
+    fqbn: arduino:avr:nano
+    platforms:
+      - platform: arduino:avr (1.8.8)
+    libraries:
+      - IRremote (4.7.1)
+
+  nano_old_bootloader:
+    fqbn: arduino:avr:nano:cpu=atmega328old
+    platforms:
+      - platform: arduino:avr (1.8.8)
+    libraries:
+      - IRremote (4.7.1)
+
+  uno:
+    fqbn: arduino:avr:uno
+    platforms:
+      - platform: arduino:avr (1.8.8)
+    libraries:
+      - IRremote (4.7.1)
+
+default_profile: nano
