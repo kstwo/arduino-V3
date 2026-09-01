@@ -1,0 +1,50 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/src",
+        "${env:LOCALAPPDATA}/Arduino15/packages/arduino/hardware/avr/*/cores/arduino",
+        "${env:LOCALAPPDATA}/Arduino15/packages/arduino/hardware/avr/*/variants/eightanaloginputs",
+        "${env:LOCALAPPDATA}/Arduino15/packages/arduino/tools/avr-gcc/*/avr/include",
+        "${env:USERPROFILE}/Documents/Arduino/libraries/IRremote/src"
+      ],
+      "defines": ["__AVR_ATmega328P__", "F_CPU=16000000L", "ARDUINO=10607"],
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "gcc-x64"
+    },
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/src",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/avr/*/cores/arduino",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/avr/*/variants/eightanaloginputs",
+        "${env:HOME}/Library/Arduino15/packages/arduino/tools/avr-gcc/*/avr/include",
+        "${env:HOME}/Documents/Arduino/libraries/IRremote/src"
+      ],
+      "defines": ["__AVR_ATmega328P__", "F_CPU=16000000L", "ARDUINO=10607"],
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "gcc-x64"
+    },
+    {
+      "name": "Linux",
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/src",
+        "${env:HOME}/.arduino15/packages/arduino/hardware/avr/*/cores/arduino",
+        "${env:HOME}/.arduino15/packages/arduino/hardware/avr/*/variants/eightanaloginputs",
+        "${env:HOME}/.arduino15/packages/arduino/tools/avr-gcc/*/avr/include",
+        "${env:HOME}/Arduino/libraries/IRremote/src"
+      ],
+      "defines": ["__AVR_ATmega328P__", "F_CPU=16000000L", "ARDUINO=10607"],
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "gcc-x64"
+    }
+  ]
+}

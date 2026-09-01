@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": 94.6, "left": -2.4, "attrs": {} },
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": -4.8, "left": -0.5, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 121.4,
+      "left": 211.2,
+      "attrs": { "color": "yellow", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 54.2,
+      "left": 211.2,
+      "attrs": { "color": "grey", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": -13,
+      "left": 211.2,
+      "attrs": { "color": "blue", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": -70.6,
+      "left": 211.2,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": -183.75, "left": 7.82, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 15.6, "left": -92.2, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 110.4,
+      "left": -96.55,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -93.6,
+      "left": 385.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn5",
+      "top": -128.2,
+      "left": -124.8,
+      "attrs": { "color": "black", "xray": "1" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": -153.6,
+      "left": -134.4,
+      "attrs": { "text": "микрофон*" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 182.6, "left": 316.8, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 134.4, "left": 546.6, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 77.56, "left": 547.2, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 115.2,
+      "left": 566.4,
+      "attrs": { "text": "12V 2A" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": 240,
+      "left": 336,
+      "attrs": { "text": "Земля общая!" }
+    },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -96, "left": -326.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 178.8,
+      "left": 637.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": 230.4,
+      "left": 624,
+      "attrs": { "text": "лампа 220" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text5",
+      "top": 153.6,
+      "left": 403.2,
+      "attrs": { "text": "разрыв фазы" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": 58.36, "left": 892.8, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 144, "left": 911.4, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "text6",
+      "top": 201.6,
+      "left": 883.2,
+      "attrs": { "text": "фаза" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text7",
+      "top": 19.2,
+      "left": 883.2,
+      "attrs": { "text": "ноль" }
+    },
+    { "type": "wokwi-text", "id": "text8", "top": 96, "left": 931.2, "attrs": { "text": "220V" } },
+    {
+      "type": "wokwi-text",
+      "id": "text9",
+      "top": -182.4,
+      "left": 163.2,
+      "attrs": {
+        "text": "D8-отключение всех таймеров\nD9-мьют (выкл микрофона)\nD10-ночной режим\nD7-выкл/вкл"
+      }
+    }
+  ],
+  "connections": [
+    [ "r1:1", "led1:A", "green", [ "h0", "v-19.2", "h-9.6" ] ],
+    [ "ir1:DAT", "nano:2", "purple", [ "h67.2", "v96" ] ],
+    [ "ir1:VCC", "nano:5V", "red", [ "v19.2", "h86.4" ] ],
+    [ "ir1:GND", "nano:GND.1", "black", [ "v28.8", "h144", "v115.2", "h-28.8" ] ],
+    [ "nano:GND.1", "bb1:17t.a", "black", [ "h19.2", "v48" ] ],
+    [ "btn1:1.l", "bb1:17t.b", "black", [ "v-19.2", "h-38.4" ] ],
+    [ "btn2:2.l", "bb1:17t.c", "black", [ "h-38.4", "v38.6" ] ],
+    [ "btn3:2.l", "bb1:17t.d", "black", [ "h-28.8", "v115.4" ] ],
+    [ "btn4:2.l", "bb1:17t.e", "black", [ "h-9.6", "v182.6" ] ],
+    [ "r1:2", "nano:5", "purple", [ "h19.2", "v-164.4", "h134.4" ] ],
+    [ "led1:C", "bb1:16t.a", "black", [ "v19.2", "h230.8" ] ],
+    [ "bb1:17t.a", "bb1:16t.a", "yellow", [ "v0", "h-9.6" ] ],
+    [ "bz1:1", "bb1:16t.b", "black", [ "h-38.4", "v115.2", "h-163.2", "v-67.2", "h9.6" ] ],
+    [ "bz1:2", "nano:6", "purple", [ "h38", "v-192", "h-316.8" ] ],
+    [ "nano:8", "btn4:1.r", "red", [ "v-28.8", "h96" ] ],
+    [ "nano:9", "btn3:1.r", "blue", [ "v28.8", "h230.2" ] ],
+    [ "nano:10", "btn2:1.r", "white", [ "v67.2", "h249.6" ] ],
+    [ "nano:7", "btn1:1.r", "gold", [ "v19.2", "h-192", "v220.8", "h403" ] ],
+    [ "btn5:1.l", "nano:3", "cyan", [ "h-9.6", "v67.2", "h240" ] ],
+    [ "btn5:2.r", "bb1:16t.c", "cyan", [ "h29", "v182.6", "h153.6", "v38.4" ] ],
+    [ "relay1:IN", "nano:4", "purple", [ "h-38.4", "v-0.2", "h-192" ] ],
+    [ "relay1:GND", "bb1:16t.d", "black", [ "h0" ] ],
+    [ "vcc1:VCC", "relay1:VCC", "red", [ "v9.6", "h-230.4" ] ],
+    [ "gnd1:GND", "relay1:GND", "black", [ "h-28.8", "v134.4", "h-211.2" ] ],
+    [ "led2:C", "relay1:NO", "#8f4814", [ "v0" ] ],
+    [ "vcc2:VCC", "led2:A", "blue", [ "v9.6", "h-182.4", "v124.8" ] ],
+    [ "gnd2:GND", "relay1:COM", "#8f4814", [ "h-19.2", "v38.4", "h-422.4", "v30.2" ] ]
+  ],
+  "dependencies": {}
+}

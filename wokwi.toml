@@ -1,0 +1,12 @@
+# Симуляция прошивки в Wokwi (расширение для VS Code и wokwi-cli).
+# Пути указаны относительно этого файла.
+#
+# Прошивку нужно собрать заранее — одним из двух способов:
+#   Arduino IDE: Sketch -> Export Compiled Binary
+#   arduino-cli: arduino-cli compile --fqbn arduino:avr:nano \
+#                    --output-dir build/arduino.avr.nano .
+
+[wokwi]
+version = 1
+firmware = 'build/arduino.avr.nano/arduinov3.ino.hex'
+elf = 'build/arduino.avr.nano/arduinov3.ino.elf'
