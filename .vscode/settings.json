@@ -1,0 +1,22 @@
+{
+  "files.associations": {
+    "*.ino": "cpp"
+  },
+  "files.eol": "\n",
+  "C_Cpp.default.cppStandard": "c++11",
+  "C_Cpp.default.cStandard": "c11",
+  "C_Cpp.clang_format_style": "file",
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "build/**": true,
+    "test/build/**": true
+  },
+  "cmake.sourceDirectory": "${workspaceFolder}/test",
+  "cmake.buildDirectory": "${workspaceFolder}/test/build",
+  "cmake.configureOnOpen": false
+}

@@ -1,0 +1,113 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "firmware: build (nano)",
+      "type": "shell",
+      "command": "arduino-cli",
+      "args": [
+        "compile",
+        "--profile",
+        "nano",
+        "--output-dir",
+        "build/arduino.avr.nano",
+        "."
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "firmware: build (uno)",
+      "type": "shell",
+      "command": "arduino-cli",
+      "args": [
+        "compile",
+        "--profile",
+        "uno",
+        "--output-dir",
+        "build/arduino.avr.uno",
+        "."
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "firmware: list boards",
+      "type": "shell",
+      "command": "arduino-cli",
+      "args": [
+        "board",
+        "list"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "firmware: upload (nano)",
+      "type": "shell",
+      "command": "arduino-cli",
+      "args": [
+        "upload",
+        "--profile",
+        "nano",
+        "-p",
+        "${input:serialPort}",
+        "."
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "tests: configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S",
+        "test",
+        "-B",
+        "test/build"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "tests: build",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "test/build"
+      ],
+      "dependsOn": "tests: configure",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "tests: run",
+      "type": "shell",
+      "command": "ctest",
+      "args": [
+        "--test-dir",
+        "test/build",
+        "--output-on-failure"
+      ],
+      "dependsOn": "tests: build",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "serialPort",
+      "type": "promptString",
+      "description": "Порт платы: COM3 (Windows), /dev/cu.usbserial-* (macOS), /dev/ttyUSB0 (Linux)"
+    }
+  ]
+}
